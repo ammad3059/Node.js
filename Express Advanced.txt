@@ -1,0 +1,13 @@
+Middleware is a function that takes a request and process it called (Request Processing Pipeline) and passed either a 
+response or passed control to another middleware. Example: Route Handler function
+
+express.json() returns a middleware function that takes a request and if there is a json object it parses it to Json obj
+and populates a req.body property which is then passed to another middleware (Route Handler function).
+
+express.urlencoded() returns a middleware function that takes a request in a key value pair format
+and populates a req.body property which is then passed to another middleware (Route Handler function).
+
+express.static() returns a middleware function that takes all the static files from the root of the site.
+
+
+

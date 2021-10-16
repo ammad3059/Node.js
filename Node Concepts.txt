@@ -1,0 +1,48 @@
+Javascript global object is window
+Node global object is global
+we can access every global object using it like window.console.log() and global.console.log()
+
+every file in a node is considered as module.
+every node application contains one file(module) which is a main module. It contains a module object that appears to be 
+global but not global and scoped to that file. which is different in Javascript.
+
+node wraps the code in a wrapper function IIFE (Module Wrapper Function).
+
+Event is one of the most core important module of node. An event is a signal that indicates that something has happened.
+Events contain a class called EventEmitter and most classes in node use it. Alot of functionality in node is based on 
+eventemitter class.
+
+Whenever you want to raise an events in your app, make a class and extends it with EventEmitter to contains all the 
+functionality that class have + the additional one.
+1) register a listener
+2) Raise an event
+
+Http is one of the most important module of node which we use to create networking applications to create a web server that 
+listens a web request etc.
+
+NPM is command line tool to install any third party modules in our application.
+npm i -g npm@5.5.1
+
+before adding any node packages add a package.json file which contains the meta data information about our project.
+create it using "npm init" and "npm init --yes" before adding any package to node app.
+
+Building RESTFUL APIs using Express
+
+fast and lightweight framework for web applications build on the top of the http module. 
+REST stands for Representational State Transfer
+RESTful service/RESTful APIs is a method to communicate with the services present at the server using Http protocol.
+Http Methods:
+GET(fetch data), POST(Create data), PUT(update data), DELETE(removing data).
+
+Express is framework(provide Structure) for creating maintainable endpoints in our application.
+Environment variable is a value that sets outside of application and part of the environment where process is running.
+We use PORT b/c we can't hardocode the port 3000 value as it can not be available in production environment.
+
+Route params value to get year/month
+Query params additional info ?sortBy=name
+
+postman for testing and sending http requests to servers.
+
+
+
+ 
