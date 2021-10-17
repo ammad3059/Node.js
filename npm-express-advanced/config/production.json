@@ -1,0 +1,6 @@
+{
+    "name": "My Express site - production",
+    "mail": {
+        "hostname": "yahoo production"
+    }
+}

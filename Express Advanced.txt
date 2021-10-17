@@ -9,5 +9,27 @@ and populates a req.body property which is then passed to another middleware (Ro
 
 express.static() returns a middleware function that takes all the static files from the root of the site.
 
+Third-party middleware
+
+helmet(Helps secure your apps by setting various HTTP headers), 
+morgan(HTTP request logger)
+
+The HTTP headers are used to pass additional information between the clients and the server through the request and 
+response header. All the headers are case-insensitive.
+
+set DEBUG=name (calling a debugger using cmd)
+set DEBUG=name,another_name  (calling multiples)
+set DEBUG=*  (calling all debuggers)
+set DEBUG=   (assigning no debuggers)
+
+set NODE_ENV=development (setting the node environment).
+
+Template engines provide html templates to be send to the users.
+1) pug
+2)mustache
+3)ESJ
+
+
+
 
 

@@ -1,36 +1,36 @@
 const { request, response } = require("express")
 const express = require("express")
-const Joi = require("Joi")
-const logger = require("./logger")
+const debug = require("debug")("expressApp")  // returns a function , second is the name of debugger used im cmd
+const Joi = require("Joi")                    // returns a class
+const morgan = require("morgan")              // returns a function 
+const config = require("config")              // returns a function 
+const logger = require("./middleware/logger")
+const { render } = require("pug")
+const courses = require('./routes/courses')
 const app = express()
 
 app.use(express.urlencoded({extended:true}))  // for urlencoded payloads
-app.use(express.static("public"));  // for static files
-app.use(logger)
+app.use(express.static("public"))  // for static files
 
+if(app.get("env")==='development'){
+app.use(morgan("tiny")) // third-party middleware
+}
 
-let courses = [{
-    id:1,
-    courseName:"Database"
-}]
+app.set("view engine", "pug")
+app.set("views", "./views")  // default
 
-app.post("/api/courses", (request, response)=>{
-    const {error} = validateCourse(request.body)
-    if(error) return response.status(400).send(error)
+app.use("/api/courses", courses);
+app.use(logger)  // custom middleware
 
-    let newCourse = {
-        id:courses.length+1,
-        courseName: request.body.courseName
-    }
-    courses.push(newCourse)
-    response.send(courses)
+app.get("/", (req,res)=>{
+    res.render("index", {title:"Pug title", message:"Just Started with html templates on node with Pug"})
 })
+
+debug(`configuration settings name: ${config.name}`);
+debug(`configuration settings host: ${config.mail.hostname}`);
+
+console.log(`By using Global varible process: ${process.env.NODE_ENV}`);  // set NODE_ENV=production
+console.log(`by using app: ${app.get("env")}`);  // by default development
 
 app.listen(3000, ()=>{console.log("Listening on port 3000...");})
 
-function validateCourse(course){
-    const schema = Joi.object({
-        courseName: Joi.string().min(4).required()
-    })
-    return schema.validate(course)
-}
