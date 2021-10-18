@@ -1,0 +1,46 @@
+Mongod is a file that controls all the background operations like fetching the right record etc.
+
+mongoose is an api that we use to connect with mongoDB database.
+
+schema defines the shape of our document within the collection(table in relational database).
+
+Document is like a row in relational database.
+
+Steps in connecting with MongoDB:
+1) create a database in mongodb compass
+2) connect with database using mongoose
+3) create a schema that defines the shape of your collection
+4) create a model that corresponds to schema you defined
+5) make object of that model class returned above
+6) save that object in mongodb database which returns a promise
+
+-1 --> ascending order
+1 --> descending order
+
+Comparision operators
+
+1) eq
+2) ne
+3) gt
+4) gte
+5) lt
+6) lte
+7) in
+8) nin (not in)
+
+Logical operators
+1) or
+2) and
+
+Regular Expressions
+
+Syntax: /pattern/i(incase-sensitive)
+
+Starts with -->  .find({name: /^Mosh/i})
+Ends with --> .find({name: /hamedani$/i})
+contains --> .find({name: /.*Mosh.*/i})
+
+
+
+
+

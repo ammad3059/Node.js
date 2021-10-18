@@ -1,0 +1,33 @@
+We can use three patterns to deal with the asynchoronous javascript:
+1) Callbacks
+2) Promises
+3) Async/Await
+
+Callback is a function that have the result of the async code and when calling the function we have another function
+defined which will be called when the result is ready.
+
+The nesting structure of callbacks is called callback hell and christmas tree problem.
+
+Promises
+
+A promise is an object that contains the eventual result of an asynchoronous operation
+A promise object can be in three states:
+1) Pending --> when we create a promise it is in pending state and it initializes the asynchoronous operation and when the
+operation is completed it can be in two states:
+2) Fullfiled --> promise is resolved and the result
+3) Rejected --> promise contains an error 
+
+parallel promise --> all the promises are resolved almost at the same time and process is single threaded.
+use Promise.all([p1,p2]).then() for paralled promise
+
+if want any promise that resolves something has happend use Promise.race([p1,p2]).then() first promise resolved result 
+will come. 
+
+already resolved and rejected values
+const p = Promise.resolve(1)    // they are already resolved
+const p = Promise.reject("Failed for some reason")
+
+Async Await
+
+It is made on the top of the promise, execute in the asynchoronous way but looks like Synchoronous syntax.
+replica for .then() chain
