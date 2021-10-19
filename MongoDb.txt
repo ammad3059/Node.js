@@ -14,8 +14,8 @@ Steps in connecting with MongoDB:
 5) make object of that model class returned above
 6) save that object in mongodb database which returns a promise
 
--1 --> ascending order
-1 --> descending order
+1 --> ascending order
+-1 --> descending order
 
 Comparision operators
 
@@ -40,6 +40,8 @@ Starts with -->  .find({name: /^Mosh/i})
 Ends with --> .find({name: /hamedani$/i})
 contains --> .find({name: /.*Mosh.*/i})
 
+use $set to update a property directly in database
+use $unset to remove a property of a document directly in database.
 
 
 

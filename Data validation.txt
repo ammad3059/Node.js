@@ -1,0 +1,2 @@
+Validation is performed at the mongoose level. we can also use Joi for validation in restful methods. Both compliment
+eachother.

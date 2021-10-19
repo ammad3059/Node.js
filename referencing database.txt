@@ -1,0 +1,40 @@
+/* Tradeoff between performance vs consistency
+
+1) using reference appraoch(normalization)  --> consistency
+let author = {
+    name: "mosh"
+}
+
+let course = {
+    code: "mt-19",
+    author: 'ref-id'
+}
+
+
+2) using embedded document appraoch(denormalization)  --> query performance
+let course = {
+    code: "mt-19",
+    author: {
+        name : "mosh" complete properties
+    }
+}
+
+3) using Hybrid appraoch
+
+let author = {
+    name: "mosh"
+    50 more properties
+}
+
+let course = {
+    code: "mt-19",
+    author: {
+        id: "ref-id",
+        name: "mosh"  selected properties
+    }
+}
+
+*/
+===== an array of sub-documents =====
+
+
