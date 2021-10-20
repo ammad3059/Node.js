@@ -36,5 +36,23 @@ let course = {
 
 */
 ===== an array of sub-documents =====
+we pass more than one sub-documents when creating a new record in database. For this we make the embedded obj to an array
+type and we can add or remove sub documents also.
+
+=== transactions=====
+transactions are group of tasks that must be performed in a unit to complete an operation, if any task fails it will roll backed
+to previous state. It is widely used in relational databases.
+
+
+In mongoDb we have the same technique called two-phase commit.
+
+mongoose is an abstraction over mongodb driver that creates an almost unique 24 characters long id for each document.
+Mongodb driver is responsible for creating an id and talks to mongodb database.
+
+24 characters = 12 bytes
+	4 bytes = timestamp
+	3 bytes = machine identifier
+	2 bytes = process identifier
+	3 bytes = counter 
 
 
