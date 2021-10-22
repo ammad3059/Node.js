@@ -32,7 +32,7 @@ router.post('/', async(req,res)=>{
 function validateMovie(movie){
     const schema = Joi.object({
         name : Joi.string().required().min(4).max(125),
-        genre : Joi.string().required(),
+        genre : Joi.objectId().required(),
         instock: Joi.number().min(0),
         price: Joi.number().min(10)
     })
