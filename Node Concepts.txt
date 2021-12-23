@@ -43,6 +43,7 @@ Query params additional info ?sortBy=name
 
 postman for testing and sending http requests to servers.
 
+Json web token is a long string that identifies a user just like driving license.
 
 
 
